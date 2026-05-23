@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Survey Report on Vaccination </title>
+    <style>
+        /* Modern Gradient Background */
+        body {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* Clean Main Header styling */
+        h1 {
+            color: #ffffff;
+            font-size: 2.5rem;
+            margin-bottom: 25px;
+            text-align: center;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Styling for the survey image banner */
+        img {
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 30px;
+            border: 4px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* Card Container layout for the Form */
+        form {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 12px 36px rgba(0, 0, 0, 0.25);
+            max-width: 650px;
+            width: 100%;
+            box-sizing: border-box;
+            color: #333333;
+        }
+
+        /* Colorful Section blocks for each question */
+        .question-block {
+            background-color: #f4f7f6;
+            margin-bottom: 24px;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 6px solid #2a5298;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        /* Small lift animation when looking through fields */
+        .question-block:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Styling for titles and questions text */
+        p, .question-title {
+            font-weight: 600;
+            font-size: 1.05rem;
+            margin-top: 0;
+            margin-bottom: 12px;
+            color: #1e3c72;
+        }
+
+        /* Red star style for required fields */
+        .required-star {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+
+        /* Custom Label alignment */
+        label {
+            cursor: pointer;
+            display: inline-block;
+            margin-bottom: 8px;
+            font-size: 0.98rem;
+            color: #4a5568;
+        }
+
+        /* Vibrant input fields */
+        input[type="text"], input[type="number"] {
+            width: 100%;
+            padding: 12px;
+            margin-top: 6px;
+            border: 2px solid #cbd5e1;
+            border-radius: 6px;
+            box-sizing: border-box;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        /* Color change highlight when clicking into a box */
+        input[type="text"]:focus, input[type="number"]:focus {
+            border-color: #2a5298;
+            background-color: #fff;
+        }
+
+        /* Spacing out radio buttons and checkboxes slightly */
+        input[type="radio"], input[type="checkbox"] {
+            margin-right: 8px;
+            transform: scale(1.15);
+            vertical-align: middle;
+            cursor: pointer;
+        }
+
+        /* Bright interactive Submit Button */
+        button[type="submit"] {
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            color: white;
+            border: none;
+            font-size: 1.2rem;
+            padding: 15px 30px;
+            cursor: pointer;
+            border-radius: 8px;
+            width: 100%;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(56, 239, 125, 0.4);
+            transition: all 0.2s ease-in-out;
+            margin-top: 10px;
+        }
+
+        /* Button hover pulse effect */
+        button[type="submit"]:hover {
+            transform: scale(1.01);
+            box-shadow: 0 6px 20px rgba(56, 239, 125, 0.6);
+            filter: brightness(1.05);
+        }
+    </style>
+</head>
+<body>
+ 
+<h1>Survey on Vaccination</h1>
+  
+<img src="vaccination.JPG" alt="Vaccination" width="460" height="345">
+  
+<form id="mainSurveyForm">
+    <div class="question-block">
+        <label for="name" class="question-title">What is your name? <span class="required-star">*</span></label>
+        <input type="text" id="name" name="username" placeholder="Enter your full name" required>
+    </div>
+  
+    <div class="question-block">
+        <p>What is your gender? <span class="required-star">*</span></p>
+        <input type="radio" id="gender_m" name="identity" value="Male" required>
+        <label for="gender_m">Male</label><br>
+        <input type="radio" id="gender_f" name="identity" value="Female">
+        <label for="gender_f">Female</label>
+    </div>
+   
+    <div class="question-block">
+        <label for="YEAR" class="question-title">Age: <span class="required-star">*</span></label>
+        <input type="number" id="YEAR" name="Age" value="10" min="1" max="120" required>
+    </div>
+
+    <div class="question-block">
+        <p>1. Have you and your family taken all vaccines suggested by the government? <span class="required-star">*</span></p>
+        <input type="radio" id="q1-a" name="government_suggested" value="Yes" required>
+        <label for="q1-a">Yes</label><br>
+        <input type="radio" id="q1-b" name="government_suggested" value="Partially">
+        <label for="q1-b">Partially</label><br>
+        <input type="radio" id="q1-c" name="government_suggested" value="No">
+        <label for="q1-c">No</label>
+    </div>
+
+    <div class="question-block">
+        <p>2. I believe vaccines are safe. <span class="required-star">*</span></p>
+        <input type="radio" id="q2-a" name="safety_belief" value="Agree" required>
+        <label for="q2-a">Agree</label><br>
+        <input type="radio" id="q2-b" name="safety_belief" value="Neutral">
+        <label for="q2-b">Neutral</label><br>
+        <input type="radio" id="q2-c" name="safety_belief" value="Disagree">
+        <label for="q2-c">Disagree</label>
+    </div>
+
+    <div class="question-block">
+        <p>3. What was the most difficult part of completing the vaccination schedule? <span class="required-star">*</span></p>
+        <input type="radio" id="q3-a" name="difficulty" value="Cost" required>
+        <label for="q3-a">Cost of the vaccine</label><br>
+        <input type="radio" id="q3-b" name="difficulty" value="Side effects">
+        <label for="q3-b">Fear of side effects</label><br>
+        <input type="radio" id="q3-c" name="difficulty" value="None">
+        <label for="q3-c">No difficulty</label>
+    </div>
+
+    <div class="question-block">
+        <p>4. Which of the following diseases can be prevented by vaccination? (Select all that apply) <span class="required-star">*</span></p>
+        <input type="checkbox" id="q4-a" name="preventable" value="Polio">
+        <label for="q4-a">Polio</label><br>
+        <input type="checkbox" id="q4-b" name="preventable" value="Tuberculosis">
+        <label for="q4-b">Tuberculosis</label><br>
+        <input type="checkbox" id="q4-c" name="preventable" value="Measles">
+        <label for="q4-c">Measles</label><br>
+        <input type="checkbox" id="q4-d" name="preventable" value="Hepatitis B">
+        <label for="q4-d">Hepatitis B</label><br>
+        <input type="checkbox" id="q4-e" name="preventable" value="Common Cold">
+        <label for="q4-e">Common cold</label><br>
+        <input type="checkbox" id="q4-f" name="preventable" value="Malaria">
+        <label for="q4-f">Malaria</label>
+    </div>
+
+    <div class="question-block">
+        <p>5. Has anyone in your household ever been diagnosed with a disease even if they were vaccinated against it? <span class="required-star">*</span></p>
+        <input type="radio" id="q5-a" name="breakthrough" value="Yes" required>
+        <label for="q5-a">Yes</label><br>
+        <input type="radio" id="q5-b" name="breakthrough" value="No">
+        <label for="q5-b">No</label>
+    </div>
+
+    <div class="question-block">
+        <p>6. Vaccines are important even if the disease is rare in your area. <span class="required-star">*</span></p>
+        <input type="radio" id="q6-a" name="rare_importance" value="Agree" required>
+        <label for="q6-a">Agree</label><br>
+        <input type="radio" id="q6-b" name="rare_importance" value="Neutral">
+        <label for="q6-b">Neutral</label><br>
+        <input type="radio" id="q6-c" name="rare_importance" value="Disagree">
+        <label for="q6-c">Disagree</label>
+    </div>
+
+    <div class="question-block">
+        <p>7. Where do you usually get vaccinations done? <span class="required-star">*</span></p>
+        <input type="radio" id="q7-a" name="location" value="Government" required>
+        <label for="q7-a">Government hospital</label><br>
+        <input type="radio" id="q7-b" name="location" value="Private">
+        <label for="q7-b">Private clinic or hospital</label><br>
+        <input type="radio" id="q7-c" name="location" value="Community">
+        <label for="q7-c">Community health worker/ community health camp</label>
+    </div>
+
+    <div class="question-block">
+        <p>8. What is your family’s main source of information about vaccines? <span class="required-star">*</span></p>
+        <input type="radio" id="q8-a" name="info_source" value="Government" required>
+        <label for="q8-a">Government</label><br>
+        <input type="radio" id="q8-b" name="info_source" value="Family/Friends">
+        <label for="q8-b">Family / Friends</label><br>
+        <input type="radio" id="q8-c" name="info_source" value="Media">
+        <label for="q8-c">TV, Radio or Social media</label>
+    </div>
+
+    <div class="question-block">
+        <p>9. What is the age group of the primary respondent? <span class="required-star">*</span></p>
+        <input type="radio" id="q9-a" name="age_group" value="Under 18" required>
+        <label for="q9-a">Under 18</label><br>
+        <input type="radio" id="q9-b" name="age_group" value="18-40">
+        <label for="q9-b">18 - 40 years</label><br>
+        <input type="radio" id="q9-c" name="age_group" value="Above 40">
+        <label for="q9-c">Above 40 years</label>
+    </div>
+
+    <div class="question-block">
+        <p>10. Do you support mandatory vaccination rules for children entering schools? <span class="required-star">*</span></p>
+        <input type="radio" id="q10-a" name="mandatory_school" value="Yes" required>
+        <label for="q10-a">Yes</label><br>
+        <input type="radio" id="q10-b" name="mandatory_school" value="No">
+        <label for="q10-b">No</label><br>
+        <input type="radio" id="q10-c" name="mandatory_school" value="Unsure">
+        <label for="q10-c">Unsure / No Opinion</label>
+    </div> 
+ 
+    <button type="submit">Submit Survey</button>
+</form>
+
+<script>
+// Dynamic browser side txt download handler
+document.getElementById('mainSurveyForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const formData = new FormData(this);
+    let outputText = "--- INDIVIDUAL SURVEY RESPONSE ---\n";
+    
+    let dataMap = {};
+    for (let [key, value] of formData.entries()) {
+        if (dataMap[key]) {
+            dataMap[key].push(value);
+        } else {
+            dataMap[key] = [value];
+        }
+    }
+
+    for (let key in dataMap) {
+        outputText += `${key}: ${dataMap[key].join(', ')}\n`;
+    }
+    outputText += "---------------------------------\n";
+
+    const blob = new Blob([outputText], { type: 'text/plain' });
+    const tempLink = document.createElement('a');
+    const userName = document.getElementById('name').value || 'respondent';
+    
+    tempLink.download = `survey_${userName.replace(/\s+/g, '_')}.txt`;
+    tempLink.href = URL.createObjectURL(blob);
+    tempLink.click();
+    
+    URL.revokeObjectURL(tempLink.href);
+    alert("Success! Your individual answers have been downloaded to your computer.");
+});
+</script>
+
+</body>
+</html>
